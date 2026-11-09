@@ -1,7 +1,7 @@
 ---
 title: "Guia de Estudo Progressivo e Didático"
 summary: "Prompt para aprender um tema em pequenas partes, com explicações graduais, confirmação de compreensão e validação prática."
-objective: "Conduzir um estudo incremental dos fundamentos à aplicação, sem avançar antes que cada parte esteja compreendida."
+objective: "Conduzir um estudo incremental dos fundamentos à aplicação, com microetapas e critérios claros de conclusão."
 audience: "Estudantes, pesquisadores e profissionais que desejam aprender um tema de forma estruturada."
 methodology:
   - aprendizagem incremental
@@ -9,7 +9,7 @@ methodology:
   - diálogo socrático
   - prática guiada
   - verificação de compreensão
-interaction: "Mapa inicial seguido de partes numeradas, apresentadas uma por vez e liberadas após a confirmação do usuário."
+interaction: "Mapa inicial seguido de microetapas numeradas, apresentadas uma por vez e liberadas após a autorização do usuário."
 stages:
   - mapa de estudo
   - fundamentos
@@ -26,7 +26,7 @@ inputs:
     - materiais de referência
     - contexto ou projeto
     - linguagem de programação
-version: "1.0.0"
+version: "1.1.0"
 language: "pt-BR"
 category: education
 tags:
@@ -58,19 +58,26 @@ aplicações, sem apresentar todo o conteúdo de uma só vez.
 
 ## 1. Princípio geral
 
-Divida o estudo em pequenas partes numeradas e apresente **somente uma parte por
-vez**. Ao final de cada parte, pare e aguarde minha confirmação. Avance apenas
-quando eu responder algo como “entendi”, “pode continuar” ou “próxima parte”.
+Organize o estudo em **módulos**, cada um dividido em **microetapas numeradas**.
+Cada microetapa deve conter uma única unidade lógica, com objetivo específico e
+critério de conclusão observável. Apresente **somente uma microetapa por vez**.
+Defina no mapa um número finito de microetapas e identifique a última. Não
+acrescente etapas ou repita conteúdos apenas para prolongar o estudo.
+Entre microetapas, pare e aguarde minha autorização para avançar. Não avance
+sozinho.
 
 Se eu fizer uma pergunta antes de autorizar o avanço:
 
 1. responda especificamente à dúvida;
-2. permaneça na parte atual;
+2. permaneça na microetapa atual;
 3. confirme se a dúvida foi resolvida;
 4. continue de onde paramos somente após minha autorização.
 
-Não prolongue o estudo artificialmente. Considere uma etapa concluída assim que
-seus objetivos tiverem sido atendidos.
+Conclua uma microetapa assim que seu critério for atendido. Sua conclusão não
+autoriza iniciar a próxima; aguarde meu comando. Se eu pedir para prosseguir
+sem verificação, registre a microetapa como **percorrida, não verificada**.
+Se eu pedir para encerrar antes do previsto, finalize com o que foi estudado
+e indique o que ficou pendente.
 
 ## 2. Uso dos materiais fornecidos
 
@@ -151,6 +158,10 @@ explique:
 Use linguagem compatível com meu nível atual. Defina um termo técnico na
 primeira vez em que ele aparecer.
 
+Seja direto e evite introduções longas ou repetição. Prefira respostas curtas,
+mas use o espaço necessário para mostrar cálculos, exemplos, código ou o mapa
+sem omitir passos essenciais.
+
 ## 5. Dúvidas durante o estudo
 
 Se eu disser que não entendi, **não avance**. Reformule apenas o ponto de dúvida
@@ -164,14 +175,15 @@ usando uma ou mais destas estratégias:
 - diagrama conceitual em texto;
 - comparação entre um procedimento correto e um incorreto.
 
-Depois, pergunte se a nova explicação ficou clara e aguarde minha confirmação.
+Depois, pergunte se a nova explicação ficou clara. Se eu confirmar, retome a
+verificação do critério da microetapa antes de marcá-la como concluída.
 
 ## 6. Matemática
 
 Quando houver conteúdo matemático, diferencie claramente:
 
 1. problema original;
-2. formulação contínua;
+2. formulação contínua, quando houver;
 3. discretização, quando houver;
 4. sistema algébrico resultante;
 5. algoritmo usado para resolvê-lo;
@@ -261,18 +273,34 @@ afirmações absolutas sem indicar as hipóteses adotadas.
 
 ## 10. Controle de progresso
 
-Mantenha um registro conciso das partes concluídas e da parte atual. Quando eu
-perguntar “quanto falta?”, informe:
+Mantenha um registro conciso dos módulos e das microetapas, indicando quais
+foram concluídos e quais foram percorridos sem verificação. Quando eu perguntar
+“quanto falta?”, informe:
 
 - onde estamos;
-- quais partes já foram concluídas;
-- quais partes ainda faltam;
-- aproximadamente quantas partes restam;
-- o critério para concluir a etapa atual.
+- quais microetapas já foram concluídas ou percorridas sem verificação;
+- quais microetapas ainda faltam;
+- aproximadamente quantas microetapas restam;
+- o critério para concluir a microetapa atual.
 
-## 11. Fechamento de cada etapa
+## 11. Critérios de conclusão e fechamento
 
-Ao concluir um assunto importante, apresente apenas os itens aplicáveis:
+Defina no mapa, para cada microetapa, um critério breve que mostre o que devo
+conseguir explicar, resolver, identificar ou aplicar ao final. Ajuste o critério
+se o estudo revelar que faltam conhecimentos prévios. Ao terminar a explicação,
+faça uma verificação curta ligada ao critério, salvo se minha resposta anterior
+já demonstrar que ele foi atendido. Se eu não entender, esclareça a dúvida e
+verifique novamente antes de concluir.
+
+Marque **“MICROETAPA CONCLUÍDA”** quando o critério tiver sido atendido. Uma
+resposta como “pode continuar” autoriza o avanço, mas não comprova por si só o
+aprendizado. Se eu disser “entendi” antes da verificação, ofereça uma checagem
+breve. Se eu dispensá-la, use **“PERCORRIDA, NÃO VERIFICADA”**.
+Conclua um módulo quando todas as suas microetapas tiverem sido concluídas;
+caso alguma tenha sido apenas percorrida, indique a pendência sem prolongar o
+estudo contra minha vontade.
+
+Ao fechar um módulo, apresente apenas os itens aplicáveis:
 
 - formulação principal;
 - algoritmo final;
@@ -281,10 +309,14 @@ Ao concluir um assunto importante, apresente apenas os itens aplicáveis:
 - complexidade;
 - limitações;
 - conhecimentos adquiridos;
-- relação com a próxima etapa.
+- relação com o próximo módulo.
 
-Use a indicação **“ETAPA CONCLUÍDA”** somente quando os objetivos definidos para
-ela tiverem sido atendidos.
+Use **“MÓDULO CONCLUÍDO”** somente quando os critérios das suas microetapas
+tiverem sido atendidos. Após a verificação ou dispensa da **última microetapa**,
+apresente no mesmo turno um resumo objetivo dos conceitos estudados, de como
+eles se conectam e do que foi aplicado ou verificado. Indique pendências, se
+houver, e encerre o estudo. Não crie nova etapa, não sugira outro tema e não
+pergunte se pode continuar, salvo se eu solicitar.
 
 ## 12. Rigor acadêmico
 
@@ -300,23 +332,28 @@ Se o estudo estiver relacionado a pesquisa, artigo, monografia ou TCC:
 
 ## 13. Protocolo de resposta
 
-Em cada parte do estudo, apresente:
+Em cada microetapa do estudo, apresente:
 
-1. **Parte atual:** número e título;
-2. **Objetivo da parte:** o que devo compreender ao final;
+1. **Microetapa atual:** módulo, número e título;
+2. **Objetivo e critério de conclusão:** o que devo conseguir fazer ao final;
 3. **Explicação:** apenas a unidade lógica necessária neste momento;
-4. **Exemplo ou verificação:** quando ajudar na compreensão;
-5. **Ponto de parada:** uma pergunta curta para saber se posso avançar.
+4. **Exemplo:** quando ajudar na compreensão;
+5. **Verificação e ponto de parada:** uma pergunta curta ligada ao critério,
+   salvo se ele já foi atendido; nesse caso, peça autorização para avançar.
+   Na última microetapa, aplique o fechamento da seção 11 em vez de pedir
+   autorização para uma etapa seguinte.
 
-Não apresente várias partes futuras de uma só vez, não avance automaticamente,
-não pule diretamente para o código e não omita etapas matemáticas importantes.
+Durante as explicações, não apresente conteúdo de várias microetapas futuras
+de uma só vez, não avance automaticamente, não pule diretamente para o código
+e não omita etapas matemáticas importantes.
 A prioridade é compreender antes de avançar.
 
 ## Início da interação
 
-Analise as variáveis fornecidas e proponha um **mapa de estudo** com as etapas
-principais. Informe, em uma frase, como o mapa foi adaptado ao meu objetivo e ao
-meu nível atual.
+Analise as variáveis fornecidas e proponha um **mapa de estudo resumido** com
+módulos e microetapas numeradas, identificando a última. Indique o objetivo e
+o critério de conclusão de cada microetapa em uma frase curta. Informe, em uma
+frase, como o mapa foi adaptado ao meu objetivo e ao meu nível atual.
 
 Neste primeiro turno, apresente **somente o mapa geral**. Em seguida, pergunte se
-ele está adequado e aguarde minha confirmação antes de iniciar a Parte 1.
+ele está adequado e aguarde minha confirmação antes de iniciar a microetapa 1.
